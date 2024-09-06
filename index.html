@@ -1,52 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
-</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Strange Place Games</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* You can change this to any font you like */
+        @import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
         body {
             background-color: black;
+            color: white;
+            font-family: 'Megrim', 'Roboto', sans-serif;
             margin: 0;
             height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-        }
-        .container {
+            justify-content: center;
             text-align: center;
-            color: white;
         }
-        .image-container {
-            width: 200px;
-            height: 200px;
+
+        .logo-container {
+            width: 220px; /* Adjust this size to your logo's dimensions */
+            height: 220px;
             overflow: hidden;
             border-radius: 50%;
-            margin-bottom: 20px;
+            margin-bottom: 20px; /* Adds space between the logo and links */
         }
-        .image-container img {
+
+        .logo-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        .megrim-regular {
-          font-family: "Megrim", system-ui;
-          font-weight: 400;
-          font-style: normal;
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .link-item {
+            position: relative;
+            display: inline-block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .link-item img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            transition: transform 0.3s ease-in-out;
+            filter: invert(99%) sepia(19%) saturate(347%) hue-rotate(127deg) brightness(111%) contrast(100%);
+        }
+
+        .link-text {
+            margin-left: 10px;
+            max-width: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: max-width 0.3s ease-in-out;
+            opacity: 0;
+        }
+
+        .link-item:hover {
+            transform: scale(1.1);
+        }
+
+        .link-item:hover .link-text {
+            max-width: 220px; /* Adjust the max width for the expanded text */
+            opacity: 1;
+        }
+
+        .link-item:hover img {
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="image-container">
-            <img src="strange-place-games-1.png" alt="Strange Place Games Logo">
-        </div>
-    <br>
-        <h1 class="megrim-regular">Coming Soon</h1>
+    <h1>Coming Soon</h1>
+    <!-- Logo Container -->
+    <div class="logo-container">
+        <a href="https://strangeplace.games">
+        <img src="strange-place-games-1.png" alt="Strange Place Games Logo">
+        </a>
     </div>
+    <!-- Links Section -->
+    <div class="links">
+        <!-- Store Link -->
+        <a href="store.html" class="link-item">
+            <img src="shopping-cart.svg" alt="Store Icon">
+            <span class="link-text">Visit our store</span>
+        </a>
+
+        <!-- Instagram Link -->
+        <a href="https://instagram.com/strangeplacegames" class="link-item">
+            <img src="instagram.png" alt="Instagram Icon">
+            <span class="link-text">Follow us on Instagram</span>
+        </a>
+
+        <!-- Add more links as needed -->
+    </div>
+
 </body>
 </html>
